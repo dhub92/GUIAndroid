@@ -28,22 +28,18 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
-    public void fillArray(){
+    /*Fill item list with dumb data, replace it with any data source */
+    public void fillList(){
         ArrayList<DataModel> data = new ArrayList<>();
         RecyclerView myRV = findViewById(R.id.lvToDoList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
 
         for(int i=0;i<15;i++)
             data.add(new DataModel("Name "+i,"Description "+i,"Value $"+i,R.drawable.ic_menu_gallery));
-
-        for(DataModel dataModel:data){
-            Log.i("DMO",dataModel.getName());
-        }
-
+        /*The list "data" and the context are passed as parameters to the custom adapter  */
         CustomAdapter customAdapter = new CustomAdapter(this,data);
-
         myRV.setLayoutManager(layoutManager);
+        myRV.setItemAnimator(new DefaultItemAnimator());
         myRV.setAdapter(customAdapter);
     }
 
@@ -75,7 +71,8 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        fillArray();
+        /*Fill the list when the app starts*/
+        fillList();
     }
 
     @Override
