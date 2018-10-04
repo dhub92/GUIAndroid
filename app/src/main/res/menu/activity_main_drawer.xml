@@ -34,7 +34,7 @@
                 android:title="Send" />
         </menu>
     </item>
-    <item android:title="Acount">
+    <item android:title="Account">
         <menu>
             <item
                 android:id="@+id/account_settings"
