@@ -13,7 +13,9 @@ import com.example.david.gui_android.Models.DataModel;
 import com.example.david.gui_android.R;
 
 import java.util.List;
-
+/*The adapter binds the data from a data source to the recycleview
+* In this case, the data is composed by three TextViews (name,description,value)
+* and a ImageView (image). You can find them in the layout called list_row.xml*/
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder>{
 
     private Context context;
